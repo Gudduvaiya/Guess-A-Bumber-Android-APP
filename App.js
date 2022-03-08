@@ -1,20 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View,TouchableWithoutFeedback,Keyboard } from 'react-native';
+import Head from './Components/Head';
+import NumberInput from './Components/NumberInput';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
+    <View style={styles.root} >
+      <Head header="GuessAN"/>
+      <NumberInput/>
       <StatusBar style="auto" />
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  root: {
+    margin:0,
+    // marginTop:30
   },
 });
